@@ -18,11 +18,11 @@ def train_model(data_path, features, target, model_name):
     accuracy = accuracy_score(y_test, model.predict(X_test))
     print(f"{model_name} Accuracy: {accuracy:.2f}")
 
-    joblib.dump(model, f"C:/Disha's corner/kubernetes_failure_prediction-dversion/models/{model_name}.pkl")
+    joblib.dump(model, f"../kubernetes_failure_prediction-dversion/models/{model_name}.pkl")
     print(f"Model saved: models/{model_name}.pkl\n")
 
 # Train models for different issues
-train_model("C:/Disha's corner/kubernetes_failure_prediction-dversion/src/training data/node_metrics.csv", ["cpu_usage", "memory_usage", "disk_pressure", "pod_restart_count"], "node_failure", "node_failure_predictor")
-train_model("C:/Disha's corner/kubernetes_failure_prediction-dversion/src/training data/resource_metrics.csv", ["cpu_usage", "memory_usage", "disk_usage", "network_io"], "resource_exhaustion", "resource_exhaustion_predictor")
-train_model("C:/Disha's corner/kubernetes_failure_prediction-dversion/src/training data/network_metrics.csv", ["network_latency", "packet_loss", "dns_failures", "connection_reset"], "network_issue", "network_issue_predictor")
-train_model("C:/Disha's corner/kubernetes_failure_prediction-dversion/src/training data/scheduling_metrics.csv", ["pending_pods", "node_capacity", "resource_requests", "autoscaler_latency"], "scheduling_issue", "scheduling_issue_predictor")
+train_model("../kubernetes_failure_prediction-dversion/src/training data/node_metrics.csv", ["cpu_usage", "memory_usage", "disk_pressure", "pod_restart_count"], "node_failure", "node_failure_predictor")
+train_model("../kubernetes_failure_prediction-dversion/src/training data/resource_metrics.csv", ["cpu_usage", "memory_usage", "disk_usage", "network_io"], "resource_exhaustion", "resource_exhaustion_predictor")
+train_model("../kubernetes_failure_prediction-dversion/src/training data/network_metrics.csv", ["network_latency", "packet_loss", "dns_failures", "connection_reset"], "network_issue", "network_issue_predictor")
+train_model("../kubernetes_failure_prediction-dversion/src/training data/scheduling_metrics.csv", ["pending_pods", "node_capacity", "resource_requests", "autoscaler_latency"], "scheduling_issue", "scheduling_issue_predictor")

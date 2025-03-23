@@ -10,18 +10,18 @@ def make_predictions(model_path, input_df):
 
 # File paths for test datasets
 test_files = {
-    "network_metrics": "C:/Disha's corner/kubernetes_failure_prediction-dversion/data/network_metrics_test.csv",
-    "node_metrics": "C:/Disha's corner/kubernetes_failure_prediction-dversion/data/node_metrics_test.csv",
-    "resource_metrics": "C:/Disha's corner/kubernetes_failure_prediction-dversion/data/resource_metrics_test.csv",
-    "scheduling_metrics": "C:/Disha's corner/kubernetes_failure_prediction-dversion/data/scheduling_metrics_test.csv",
+    "network_metrics": "../kubernetes_failure_prediction-dversion/data/network_metrics_test.csv",
+    "node_metrics": "../kubernetes_failure_prediction-dversion/data/node_metrics_test.csv",
+    "resource_metrics": "../kubernetes_failure_prediction-dversion/data/resource_metrics_test.csv",
+    "scheduling_metrics": "../kubernetes_failure_prediction-dversion/data/scheduling_metrics_test.csv",
 }
 
 # Model file paths (update paths as needed)
 model_paths = {
-    "node_failure": "C:/Disha's corner/kubernetes_failure_prediction-dversion/models/node_failure_predictor.pkl",
-    "resource_exhaustion": "C:/Disha's corner/kubernetes_failure_prediction-dversion/models/resource_exhaustion_predictor.pkl",
-    "network_issue": "C:/Disha's corner/kubernetes_failure_prediction-dversion/models/network_issue_predictor.pkl",
-    "scheduling_issue": "C:/Disha's corner/kubernetes_failure_prediction-dversion/models/scheduling_issue_predictor.pkl",
+    "node_failure": "../kubernetes_failure_prediction-dversion/models/node_failure_predictor.pkl",
+    "resource_exhaustion": "../kubernetes_failure_prediction-dversion/models/resource_exhaustion_predictor.pkl",
+    "network_issue": "../kubernetes_failure_prediction-dversion/models/network_issue_predictor.pkl",
+    "scheduling_issue": "../kubernetes_failure_prediction-dversion/models/scheduling_issue_predictor.pkl",
 }
 
 # **Predict Node Failure**
@@ -50,7 +50,7 @@ scheduling_df["Words"] = ['Issue' if a == 1 else 'No Issue' for a in scheduling_
 print("Scheduling Metrics Predictions:\n", scheduling_df[["scheduling_issue", "scheduling_issue_prediction","Words"]])
 
 # **Save updated datasets with predictions**
-node_df.to_csv("C:/Disha's corner/kubernetes_failure_prediction-dversion/src/result_data/node_metrics_with_predictions.csv", index=False)
-resource_df.to_csv("C:/Disha's corner/kubernetes_failure_prediction-dversion/src/result_data/resource_metrics_with_predictions.csv", index=False)
-network_df.to_csv("C:/Disha's corner/kubernetes_failure_prediction-dversion/src/result_data/network_metrics_with_predictions.csv", index=False)
-scheduling_df.to_csv("C:/Disha's corner/kubernetes_failure_prediction-dversion/src/result_data/scheduling_metrics_with_predictions.csv", index=False)
+node_df.to_csv("../kubernetes_failure_prediction-dversion/src/result_data/node_metrics_with_predictions.csv", index=False)
+resource_df.to_csv("../kubernetes_failure_prediction-dversion/src/result_data/resource_metrics_with_predictions.csv", index=False)
+network_df.to_csv("../kubernetes_failure_prediction-dversion/src/result_data/network_metrics_with_predictions.csv", index=False)
+scheduling_df.to_csv("../kubernetes_failure_prediction-dversion/src/result_data/scheduling_metrics_with_predictions.csv", index=False)
